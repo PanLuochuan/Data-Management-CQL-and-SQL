@@ -3,6 +3,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql import Row
 from pyspark.sql.functions import col,when,max
 
+# Data loading.
 def parseInput(line):
         fields = line.split('|')
         return Row(user_id = int(fields[0]), age = int(fields [1]), gender = fields [2], occupation = fields[3], zip = fields[4])
@@ -21,14 +22,17 @@ if _name_ == "_main_":
     rating =  spark.sparkContext.textFile("hdfs:///user/maria_dev/ml-100k/u.data")
     name =  spark.sparkContext.textFile("hdfs:///user/maria_dev/ml-100k/u.item")
 
+   # Create an RDD object.
     users = user.map(parseInput)
     ratings = rating.map(parse_rating)
     names = name.map(parse_name)
 
+   # Convert RDD to DataFrame.
     usersDataset = spark.createDataFrame(users)
     ratingsDataset = spark.createDataFrame(ratings)
     namesDataset = spark.createDataFrame(names)
 
+   # Writes the DataFrame data to Cassandra's specific keyspace "movielens".
     usersDataset.write\
          .format("org.apache.spark.sql.cassandra")\
          .mode('append')\
@@ -58,6 +62,7 @@ if _name_ == "_main_":
         .options(table="movie_item", keyspace="movielens")\
         .load()
 
+   # Read data from Cassandra.
     readUsers.createOrReplaceTempView("users")
     readRatings.createOrReplaceTempView("ratings")
     readNames.createOrReplaceTempView("names")
@@ -65,6 +70,7 @@ if _name_ == "_main_":
 movie_ratings = ratingsDataset.join(namesDataset,"movie_id")
 movie_ratings.createOrReplaceTempView("movie_ratings")
 
+# Perform SQL query analysis.
 print("The average rating for each movie.")
 avg_ratings = spark.sql("SELECT name, AVG(rating) AS avg_rating FROM movie_ratings GROUP BY name")
 avg_ratings.show(10,truncate=100)
