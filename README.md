@@ -1,7 +1,7 @@
 # Data Management CQL and SQL
 ## Introduction
 Use Cassandra Query Language (CQL) and Spark2 Structured Query Language (SQL)
-The data used in this project is available for download in data.zip, using u.data, u.item and u.user.
+The data used in this project is available for download in data.zip, using u.data, u.item and u.user files from the Movielens 100k Dataset (ml-100k.zip), which can be downloaded from https://grouplens.org/datasets/movielens/.
 
 u.data     -- The full u data set, 100000 ratings by 943 users on 1682 items.
               Each user has rated at least 20 movies.  Users and items are
@@ -27,7 +27,17 @@ u.user     -- Demographic information about the users; this is a tab
               user id | age | gender | occupation | zip code
               The user ids are the ones used in the u.data data set.
 
-## Output result
+My python script include the following elements:
+1.Python libraries used to execute Spark2 and Cassandra sessions.
+2.Functions to parse the u.user file into HDFS.
+3.Functions to load, read, and create Resilient Distributed Dataset (RDD) objects.
+4.Functions to convert the RDD objects into DataFrame.
+5.Functions to write the DataFrame into the Keyspace database created in Cassandra.
+6.Functions to read the table back from Cassandra into a new DataFrame.
+
+## Output Result
+Display only the top ten results for each question.
+
 i) Calculate the average rating for each movie.
 
 ![WhatsApp 图像2024-06-21于11 16 39_0d1d0c52](https://github.com/PanLuochuan/Data-Management-CQL-and-SQL/assets/152348928/885bcf06-d61c-4197-b5b3-956437fda762)
