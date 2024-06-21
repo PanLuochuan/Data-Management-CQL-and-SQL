@@ -38,7 +38,8 @@ ii) Identify the top ten movies with the highest average ratings.
 
 iii) Find the users who have rated at least 50 movies and identify their favourite movie genres.
 
-![WhatsApp 图像2024-06-21于11 16 38_2c4299b3](https://github.com/PanLuochuan/Data-Management-CQL-and-SQL/assets/152348928/0122e1bb-8dd6-4327-9c4d-48292ad1d1b2)
+![WhatsApp 图像2024-06-21于11 16 39_bd4a6d54](https://github.com/PanLuochuan/Data-Management-CQL-and-SQL/assets/152348928/054c4f53-3cb0-48db-8393-0b8b44922b86)
+
 ![WhatsApp 图像2024-06-21于11 16 38_14e602b3](https://github.com/PanLuochuan/Data-Management-CQL-and-SQL/assets/152348928/735acb0a-c777-4245-a57c-d349b0feb95d)
 
 
