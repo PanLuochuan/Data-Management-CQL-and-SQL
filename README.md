@@ -1,7 +1,8 @@
 # Data Management CQL and SQL
 ## Introduction
 Use Cassandra Query Language (CQL) and Spark2 Structured Query Language (SQL)
-**Dataset:** The data used in this project is available for download in data.zip, using u.data, u.item and u.user files from the Movielens 100k Dataset (ml-100k.zip), which can be downloaded from https://grouplens.org/datasets/movielens/.
+
+The data used in this project is available for download in data.zip, using u.data, u.item and u.user files from the Movielens 100k Dataset (ml-100k.zip), which can be downloaded from https://grouplens.org/datasets/movielens/.
 
 **u.data**    -- The full u data set, 100000 ratings by 943 users on 1682 items.
               Each user has rated at least 20 movies.  Users and items are
@@ -57,7 +58,7 @@ iii) Find the users who have rated at least 50 movies and identify their favouri
 ![WhatsApp 图像2024-06-21于11 16 39_bd4a6d54](https://github.com/PanLuochuan/Data-Management-CQL-and-SQL/assets/152348928/054c4f53-3cb0-48db-8393-0b8b44922b86)
 
 ![WhatsApp 图像2024-06-21于11 16 38_14e602b3](https://github.com/PanLuochuan/Data-Management-CQL-and-SQL/assets/152348928/735acb0a-c777-4245-a57c-d349b0feb95d)
-
+Their favorite type of movie is action.
 
 iv) Find all the users with age that is less than 20 years old.
 
