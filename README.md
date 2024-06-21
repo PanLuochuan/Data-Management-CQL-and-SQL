@@ -1,16 +1,16 @@
 # Data Management CQL and SQL
 ## Introduction
 Use Cassandra Query Language (CQL) and Spark2 Structured Query Language (SQL)
-The data used in this project is available for download in data.zip, using u.data, u.item and u.user files from the Movielens 100k Dataset (ml-100k.zip), which can be downloaded from https://grouplens.org/datasets/movielens/.
+**Dataset:** The data used in this project is available for download in data.zip, using u.data, u.item and u.user files from the Movielens 100k Dataset (ml-100k.zip), which can be downloaded from https://grouplens.org/datasets/movielens/.
 
-u.data     -- The full u data set, 100000 ratings by 943 users on 1682 items.
+**u.data**    -- The full u data set, 100000 ratings by 943 users on 1682 items.
               Each user has rated at least 20 movies.  Users and items are
               numbered consecutively from 1.  The data is randomly
               ordered. This is a tab separated list of 
 	         user id | item id | rating | timestamp. 
               The time stamps are unix seconds since 1/1/1970 UTC   
 
-u.item     -- Information about the items (movies); this is a tab separated
+**u.item**     -- Information about the items (movies); this is a tab separated
               list of
               movie id | movie title | release date | video release date |
               IMDb URL | unknown | Action | Adventure | Animation |
@@ -22,17 +22,23 @@ u.item     -- Information about the items (movies); this is a tab separated
               several genres at once.
               The movie ids are the ones used in the u.data data set.
 
-u.user     -- Demographic information about the users; this is a tab
+**u.user**     -- Demographic information about the users; this is a tab
               separated list of
               user id | age | gender | occupation | zip code
               The user ids are the ones used in the u.data data set.
 
 My python script include the following elements:
+
 1.Python libraries used to execute Spark2 and Cassandra sessions.
+
 2.Functions to parse the u.user file into HDFS.
+
 3.Functions to load, read, and create Resilient Distributed Dataset (RDD) objects.
+
 4.Functions to convert the RDD objects into DataFrame.
+
 5.Functions to write the DataFrame into the Keyspace database created in Cassandra.
+
 6.Functions to read the table back from Cassandra into a new DataFrame.
 
 ## Output Result
